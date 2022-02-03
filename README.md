@@ -1,5 +1,6 @@
 # rule no.1
 
+
 DO NOT BREAK PEOPLE'S SYSTEM
 
 # rule no.2
