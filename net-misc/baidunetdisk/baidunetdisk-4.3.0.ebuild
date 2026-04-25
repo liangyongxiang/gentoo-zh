@@ -1,4 +1,4 @@
-# Copyright 2020-2021 Gentoo Authors
+# Copyright 2020-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,12 +9,11 @@ DESCRIPTION="Baidu Net Disk is a cloud storage client (Linux Version)"
 HOMEPAGE="https://pan.baidu.com/"
 SRC_URI="http://wppkg.baidupcs.com/issue/netdisk/Linuxguanjia/${PV}/${PN}_${PV}_amd64.deb"
 
+S="${WORKDIR}"
 LICENSE="BaiduNetDisk"
 SLOT="0"
-RESTRICT="strip mirror"
 KEYWORDS="-* ~amd64"
-
-QA_PREBUILT="*"
+RESTRICT="strip mirror"
 
 RDEPEND="
 	app-crypt/p11-kit
@@ -25,7 +24,7 @@ RDEPEND="
 	x11-libs/libXtst
 "
 
-S="${WORKDIR}"
+QA_PREBUILT="*"
 
 src_install() {
 	insinto /opt

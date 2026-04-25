@@ -30,7 +30,7 @@ jobs:
 
     - name: cat binrepos
       run: |
-        cat /etc/portage/binrepos.conf/gentoobinhost.conf
+        cat /etc/portage/binrepos.conf/*
 
     - name: setup features
       run: |
@@ -44,8 +44,14 @@ jobs:
         app-portage/eix \
         dev-vcs/git
 
+    - name: setup gentoo git repo
+      run: |
+        eselect repository add gentoo git https://github.com/gentoo-mirror/gentoo.git
+        rm -rf /var/db/repos/gentoo
+        emaint sync -r gentoo
+
     - name: checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: eix
       id: eix
@@ -80,7 +86,7 @@ jobs:
       nvcmp: ${{ steps.nvchecker.outputs.nvcmp }}
     steps:
     - name: checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: install depends
       run: |
@@ -114,12 +120,12 @@ jobs:
         include: ${{ fromJson(needs.nvchecker.outputs.nvcmp) }}
     steps:
     - name: Checkout bumpbot
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         repository: 'gentoo-zh-drafts/bumpbot'
 
     - name: Checkout gentoo-zh
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         path: 'gentoo-zh'
 

@@ -1,7 +1,9 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+
+inherit tmpfiles
 
 DESCRIPTION="Modular initramfs image creation utility"
 HOMEPAGE="https://github.com/archlinux/mkinitcpio"
@@ -25,19 +27,21 @@ sys-apps/coreutils
 sys-apps/findutils
 sys-apps/sed
 app-alternatives/awk
-sys-apps/baselayout[-split-usr]
+sys-apps/baselayout
 "
 
 RDEPEND="${DEPEND}
-	systemd? ( sys-apps/systemd[-split-usr] )
+	systemd? ( sys-apps/systemd )
 "
 
 BDEPEND="
-sys-apps/busybox
-app-arch/libarchive
-app-text/asciidoc
-sys-apps/sed
+	sys-apps/busybox
+	app-arch/libarchive
+	app-text/asciidoc
+	sys-apps/sed
 "
+
+QA_PREBUILT="/usr/lib/initcpio/busybox"
 
 src_install(){
 	default_src_install
@@ -50,4 +54,8 @@ src_install(){
 	newins "${FILESDIR}"/initcpio-hook-udev udev
 	insinto /etc/mkinitcpio.d
 	doins "${FILESDIR}"/linux.preset
+}
+
+pkg_postinst() {
+	tmpfiles_process
 }

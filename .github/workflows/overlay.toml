@@ -3,9 +3,11 @@ oldver = "old_ver.json"
 newver = "new_ver.json"
 
 ["app-admin/1password"]
-source = "snapcraft"
-snap = "1password"
-channel = "stable"
+source = "apt"
+pkg = "1password"
+mirror = "https://downloads.1password.com/linux/debian/amd64"
+suite = "stable"
+# strip_release = true
 github_account = ["yangmame", "peeweep"]
 
 ["app-admin/chezmoi"]
@@ -13,7 +15,6 @@ source = "github"
 github = "twpayne/chezmoi"
 use_latest_tag = true
 prefix = "v"
-github_account = "tsln1998"
 
 # FIXME: github graphql api seems to be some confusion between chezmoi and
 # chezmoi-bin, so we disable one of them
@@ -22,7 +23,6 @@ github_account = "tsln1998"
 # github = "twpayne/chezmoi"
 # use_latest_release = true
 # prefix = "v"
-# github_account = "tsln1998"
 
 ["app-admin/enpass"]
 source = "apt"
@@ -77,17 +77,17 @@ github = "outloudvi/mw2fcitx"
 use_latest_release = true
 github_account = "blackteahamburger"
 
-["app-dicts/fcitx-pinyin-sougou-baidu"]
-source = "github"
-github = "blackteahamburger/fcitx5-pinyin-sougou-baidu"
-use_latest_release = true
-github_account = "blackteahamburger"
-
 ["app-dicts/fcitx-pinyin-zhwiki"]
 source = "archpkg"
 archpkg = "fcitx5-pinyin-zhwiki"
 strip_release = true
 github_account = "blackteahamburger"
+
+["app-editors/antigravity"]
+source = "regex"
+url = "https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/dists/antigravity-debian/main/binary-amd64/Packages"
+regex = 'Version: ([^-]+)-\d+'
+github_account = "zakkaus"
 
 ["app-editors/appflowy-bin"]
 source = "github"
@@ -95,15 +95,6 @@ github = "AppFlowy-IO/AppFlowy"
 use_latest_release = true
 github_account = "Linerre"
 
-["app-editors/cursor"]
-source = "regex"
-url = "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=latest"
-regex = '"version":"([\d.]+)"'
-
-["app-misc/cursor-agent"]
-source = "regex"
-url = "https://cursor.com/install"
-regex = 'https:\/\/downloads\.cursor\.com\/lab\/(\d{4}\.\d{2}\.\d{2})-[^\/]+\/'
 
 ["dev-lang/dart"]
 source = "apt"
@@ -145,12 +136,6 @@ github_account = "CHN-beta"
 
 # TODO:
 #["app-emulation/deepin-wine-plugin"]
-
-# TODO:
-#["app-emulation/deepin-wine5"]
-
-# TODO:
-#["app-emulation/deepin-wine6-stable"]
 
 # TODO: PV mismatching tags
 #["app-emulation/looking-glass"]
@@ -631,6 +616,11 @@ use_latest_release = true
 prefix = "v"
 github_account = "wgjak47"
 
+["dev-python/microrepl"]
+source = "pypi"
+pypi = "microrepl"
+github_account = "blackteahamburger"
+
 ["dev-python/mw2fcitx"]
 source = "pypi"
 pypi = "mw2fcitx"
@@ -714,7 +704,6 @@ source = "github"
 github = "asdf-vm/asdf"
 use_latest_tag = true
 prefix = "v"
-github_account = "tsln1998"
 
 ["dev-util/binsider"]
 source = "github"
@@ -723,7 +712,7 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
-["dev-util/codex-bin"]
+["dev-util/codex"]
 source = "github"
 github = "openai/codex"
 use_latest_release = true
@@ -744,7 +733,7 @@ strip_release = true
 source = "github"
 github = "openSUSE/osc"
 use_latest_tag = true
-github_account = ["douglarek", "peeweep"]
+github_account = "douglarek"
 
 ["dev-util/pacstrap"]
 source = "gitlab"
@@ -774,7 +763,6 @@ source = "github"
 github = "version-fox/vfox"
 use_latest_tag = true
 prefix = "v"
-github_account = "tsln1998"
 
 # FIXME: github graphql api seems to be some confusion between vfox and
 # vfox-bin, so we disable one of them
@@ -783,7 +771,6 @@ github_account = "tsln1998"
 # github = "version-fox/vfox"
 # use_latest_release = true
 # prefix = "v"
-# github_account = "tsln1998"
 
 ["dev-util/zprint-bin"]
 source = "github"
@@ -813,15 +800,6 @@ from_pattern = '^(\d{4}\.\d{3,4}\.\d+)-lazer$'
 to_pattern = '\1'
 github_account = "Puqns67"
 
-["games-arcade/osu-lazer-tachyon-bin"]
-source = "github"
-github = "ppy/osu"
-use_latest_release = true
-include_prereleases = true
-from_pattern = '^(\d{4}\.\d{3,4}\.\d+)-tachyon$'
-to_pattern = '\1'
-github_account = "Puqns67"
-
 # live package only
 #["games-fps/source-engine"]
 
@@ -847,12 +825,6 @@ source = "gitlab"
 host = "gitlab.freedesktop.org"
 gitlab = "libdecor/libdecor"
 use_max_tag = true
-
-["gui-wm/swayfx"]
-source = "github"
-github = "WillPower3309/swayfx"
-use_latest_release = true
-github_account = "yangmame"
 
 ["kde-misc/plasma-applet-netspeed-widget"]
 source = "github"
@@ -1002,13 +974,6 @@ strip_release = true
 #use_latest_release = true
 #prefix = "v"
 
-["media-libs/phonon-mpv"]
-source = "github"
-github = "OpenProgger/phonon-mpv"
-use_latest_tag = true
-prefix = "v"
-github_account = "microcai"
-
 ["media-plugins/osdlyrics"]
 source = "github"
 github = "osdlyrics/osdlyrics"
@@ -1049,9 +1014,6 @@ source = "github"
 github = "lyswhut/lx-music-desktop"
 use_latest_tag = true
 prefix = "v"
-
-# dead upstream
-#["media-sound/netease-cloud-music"]
 
 ["media-sound/netease-cloud-music-gtk"]
 source = "github"
@@ -1107,7 +1069,6 @@ use_latest_release = true
 prefix = "v"
 from_pattern = "(.*)-(.*)"
 to_pattern = '\1_p\2'
-github_account = "peeweep"
 
 ["media-video/implay"]
 source = "github"
@@ -1129,9 +1090,9 @@ prefix = "v"
 github_account = "st0nie"
 
 ["media-video/piliplus-bin"]
-source = "github"
-github = "bggRGjQaUbCoE/PiliPlus"
-use_latest_release = true
+source = "aur"
+aur = "piliplus-bin"
+strip_release = true
 github_account = "xysgh"
 
 # TODO: upstream removed linux support
@@ -1146,6 +1107,13 @@ github_account = ["peeweep", "irort"]
 
 # dead upstream
 # ["net-analyzer/nali"]
+
+["net-analyzer/cfspeedtest-bin"]
+source = "github"
+github = "code-inflation/cfspeedtest"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
 
 ["net-analyzer/realitlscanner"]
 source = "github"
@@ -1178,8 +1146,6 @@ use_latest_tag = true
 prefix = "v"
 github_account = "peeweep"
 
-#["net-im/deepin-wine-wecom"]
-
 ["net-im/dingtalk"]
 source = "httpheader"
 url = "https://www.dingtalk.com/win/d/qd=linux_amd64"
@@ -1193,6 +1159,13 @@ regex = 'QQ_([\d\.\_]+)_.*.deb'
 from_pattern = '(.*)_(.*)'
 to_pattern = '\1_p\2'
 github_account = "Puqns67"
+
+["net-im/vesktop-bin"]
+source = "github"
+github = "Vencord/Vesktop"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
 
 ["net-im/wechat"]
 source = "regex"
@@ -1233,7 +1206,6 @@ github_account = "123485k"
 ["net-misc/ananta"]
 source = "pypi"
 pypi = "ananta"
-github_account = "peeweep"
 
 ["net-misc/another-redis-desktop-manager-bin"]
 source = "github"
@@ -1279,6 +1251,13 @@ github = "ForgQi/biliup-rs"
 use_latest_release = true
 prefix = "v"
 github_account = "123485k"
+
+["net-misc/bruno-bin"]
+source = "github"
+github = "usebruno/bruno"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
 
 ["net-misc/geo"]
 source = "github"
@@ -1342,12 +1321,6 @@ source = "regex"
 url = "https://www.todesk.com/linux.html"
 regex = "todesk-v(.*)-amd64.deb"
 github_account = "microcai"
-
-["net-misc/uuplugin"]
-source = "aur"
-aur = "uuplugin-bin"
-strip_release = true
-github_account = "st0nie"
 
 # live package only
 #["net-p2p/amule-dlp"]
@@ -1484,7 +1457,7 @@ source = "github"
 github = "SagerNet/sing-box"
 use_latest_release = true
 prefix = "v"
-github_account = ["Puqns67", "peeweep"]
+github_account = "Puqns67"
 
 ["net-proxy/smartproxy"]
 source = "github"
@@ -1548,7 +1521,6 @@ source = "github"
 github = "Zephyruso/zashboard"
 use_latest_tag = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-vpn/sstp-server"]
 source = "github"
@@ -1732,8 +1704,16 @@ strip_release = true
 source = "aur"
 aur = "brave-bin"
 strip_release = true
-github_account = "irort"
 prefix = "1:"
+github_account = ["irort", "Zakkaus"]
+
+["www-client/zen-browser-bin"]
+source = "github"
+github = "zen-browser/desktop"
+use_latest_release = true
+from_pattern = "(.*)b"
+to_pattern = "\\1_beta"
+github_account = "zakkaus"
 
 ["www-servers/darkhttpd"]
 source = "github"
@@ -1780,11 +1760,6 @@ github = "flatpak/flatpak-xdg-utils"
 use_latest_release = true
 github_account = "st0nie"
 
-["x11-misc/fqterm"]
-source = "github"
-github = "mytbk/fqterm"
-use_latest_tag = true
-
 # live package only
 #["x11-misc/i3lock-color"]
 
@@ -1801,6 +1776,21 @@ prefix = "v"
 #["x11-misc/snapd-xdg-open"]
 #source = "github"
 #github = "snapcore/snapd-xdg-open"
+
+["x11-terms/blackbox-terminal"]
+source = "gitlab"
+gitlab = "raggesilver/blackbox"
+host = "gitlab.gnome.org"
+use_max_tag = true
+prefix = "v"
+exclude_regex = ".*alpha.*|.*beta.*|.*rc.*"
+github_account = "zakkaus"
+
+["x11-terms/termius"]
+source = "jq"
+url = "https://formulae.brew.sh/api/cask/termius.json"
+filter = ".version"
+github_account = "zakkaus"
 
 ["x11-terms/wezterm-bin"]
 source = "github"
@@ -1859,3 +1849,10 @@ source = "github"
 github = "hyprwm/Hypr"
 use_latest_release = true
 github_account = "Goldsrc233"
+
+["dev-util/opencode-bin"]
+source = "github"
+github = "anomalyco/opencode"
+use_latest_release = true
+prefix = "v"
+github_account = "xz-dev"
