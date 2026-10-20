@@ -624,6 +624,15 @@ use_latest_tag = true
 prefix = "v"
 github_account = "st0nie"
 
+["app-misc/magpie"]
+source = "github"
+github = "yetone/magpie"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+deps = { lang = "golang", tag = "v{bundle_pv}" }
+# autobump off: a bump may need a new gentoo-deps bundle for a changed go.sum
+
 ["app-misc/magpie-bin"]
 source = "github"
 github = "yetone/magpie"
