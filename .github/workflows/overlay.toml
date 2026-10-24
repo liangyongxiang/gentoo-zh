@@ -1048,6 +1048,11 @@ prefix = "v"
 github_account = ["OriPoin", "gouwazi"]
 autobump = true
 
+["dev-python/asyncpg"]
+source = "pypi"
+pypi = "asyncpg"
+github_account = ["liangyongxiang"]
+
 ["dev-python/autopxd2"]
 source = "github"
 github = "elijahr/python-autopxd2"
