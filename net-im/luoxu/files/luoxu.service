@@ -1,0 +1,17 @@
+[Unit]
+Description=luoxu Telegram group indexer and search API
+Documentation=https://github.com/lilydjwg/luoxu
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=luoxu
+Group=luoxu
+StateDirectory=luoxu
+WorkingDirectory=/var/lib/luoxu
+ExecStart=/usr/bin/python3 -m luoxu --config /etc/luoxu/config.toml
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

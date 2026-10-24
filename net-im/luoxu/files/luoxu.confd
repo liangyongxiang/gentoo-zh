@@ -1,0 +1,11 @@
+# /etc/conf.d/luoxu: configuration for the luoxu OpenRC service
+
+# User and group the indexer runs as; the session file and cache
+# directory must be writable by this user.
+#LUOXU_USER="luoxu:luoxu"
+
+# Path to the luoxu config.toml.
+#LUOXU_CONFIG="/etc/luoxu/config.toml"
+
+# Working directory (session and avatar cache live here).
+#LUOXU_DIR="/var/lib/luoxu"

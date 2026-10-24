@@ -13,6 +13,8 @@ newver = "new_ver.json"
 
 #["acct-group/keyd"]
 
+#["acct-group/luoxu"]
+
 #["acct-group/n2n"]
 
 #["acct-group/ntpd-rs"]
@@ -38,6 +40,8 @@ newver = "new_ver.json"
 #["acct-user/dufs"]
 
 #["acct-user/hysteria"]
+
+#["acct-user/luoxu"]
 
 #["acct-user/n2n"]
 
@@ -2187,6 +2191,9 @@ url = "https://www.dingtalk.com/win/d/qd=linux_amd64"
 method = "GET"
 regex = 'com.alibabainc.dingtalk_(.*)_amd64.deb'
 github_account = "gouwazi"
+
+# live package only
+#["net-im/luoxu"]
 
 ["net-im/telegram-desktop"]
 source = "github"
