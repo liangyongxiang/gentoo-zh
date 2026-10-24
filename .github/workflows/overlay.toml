@@ -1236,6 +1236,11 @@ source = "pypi"
 pypi = "simplesat"
 github_account = "f3rmata"
 
+["dev-python/telethon"]
+source = "pypi"
+pypi = "Telethon"
+github_account = ["liangyongxiang"]
+
 ["dev-python/uv-bin"]
 source = "github"
 github = "astral-sh/uv"
