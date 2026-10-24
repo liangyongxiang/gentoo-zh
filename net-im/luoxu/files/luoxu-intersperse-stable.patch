@@ -1,0 +1,30 @@
+--- a/querytrans/src/lib.rs
++++ b/querytrans/src/lib.rs
+@@ -1,5 +1,3 @@
+-#![feature(iter_intersperse)]
+-
+ mod parser;
+ mod display;
+ mod transform;
+--- a/querytrans/src/transform.rs
++++ b/querytrans/src/transform.rs
+@@ -47,11 +47,14 @@
+         .map(|s| Simple::Term(Term(s))).collect()
+     ))
+   } else {
+-    Simple::Group(Group(
+-      ss.into_iter()
+-        .intersperse(String::from("OR"))
+-        .map(|s| Simple::Term(Term(s))).collect()
+-    ))
++    let mut terms = Vec::new();
++    for (i, s) in ss.into_iter().enumerate() {
++      if i > 0 {
++        terms.push(Simple::Term(Term(String::from("OR"))));
++      }
++      terms.push(Simple::Term(Term(s)));
++    }
++    Simple::Group(Group(terms))
+   };
+   vec![inner]
+ }

@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="luoxu Telegram group indexer and search API"
+
+: ${LUOXU_USER:=luoxu:luoxu}
+: ${LUOXU_CONFIG:=/etc/luoxu/config.toml}
+: ${LUOXU_DIR:=/var/lib/luoxu}
+
+command="/usr/bin/python3"
+command_args="-m luoxu --config ${LUOXU_CONFIG}"
+command_user="${LUOXU_USER}"
+command_background=true
+directory="${LUOXU_DIR}"
+pidfile="/run/luoxu.pid"
+output_log="${LUOXU_DIR}/luoxu.log"
+error_log="${LUOXU_DIR}/luoxu.log"
+
+required_files="${LUOXU_CONFIG}"
+
+depend() {
+	need localmount
+	after net
+}
+
+start_pre() {
+	checkpath -d -m 0750 -o "${LUOXU_USER}" "${LUOXU_DIR}"
+}

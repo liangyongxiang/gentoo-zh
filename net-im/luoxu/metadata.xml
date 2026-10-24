@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>tanekliang@gmail.com</email>
+		<name>Yongxiang Liang</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">lilydjwg/luoxu</remote-id>
+	</upstream>
+	<longdescription>
+		A Telegram userbot that indexes Chinese and Japanese group contents
+		into PostgreSQL (with the pgroonga full-text search extension) and
+		serves a search API. Upstream warns that userbot usage carries an
+		account-ban risk.
+	</longdescription>
+</pkgmetadata>
