@@ -912,6 +912,12 @@ use_latest_release = true
 prefix = "v"
 github_account = ["CHN-beta", "gouwazi"]
 
+["dev-db/pgroonga"]
+source = "github"
+github = "pgroonga/pgroonga"
+use_latest_release = true
+github_account = ["liangyongxiang"]
+
 ["dev-debug/lldb-mi"]
 source = "github"
 github = "lldb-tools/lldb-mi"
