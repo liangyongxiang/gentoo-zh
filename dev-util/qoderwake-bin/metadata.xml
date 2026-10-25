@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>overlay@gentoozh.org</email>
+		<name>gentoo-zh</name>
+	</maintainer>
+	<longdescription lang="en">
+		Qoder Wake is Qoder&#39;s local agent runtime. It hosts and
+		orchestrates coding agents, and connects them to IM channels and
+		browser connectors. It bundles its own agent CLI as
+		qodercli/qodercli-wake. This package installs the prebuilt
+		upstream tree.
+	</longdescription>
+	<longdescription lang="zh">
+		Qoder Wake 是 Qoder 推出的本地智能体运行时, 承载并调度编程
+		智能体, 可接入 IM 渠道和浏览器连接器, 自带配套的
+		qodercli/qodercli-wake。本软件包安装上游预编译的程序目录。
+	</longdescription>
+</pkgmetadata>

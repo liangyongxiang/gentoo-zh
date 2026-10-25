@@ -1491,6 +1491,12 @@ url = "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/channels/manifest.
 regex = '"latest": "([\d.]+)"'
 github_account = "liangyongxiang"
 
+["dev-util/qoderwake-bin"]
+source = "regex"
+url = "https://download.qoder.com/qoderwake/channels/manifest.json"
+regex = '"latest": "([\d.]+)"'
+github_account = "liangyongxiang"
+
 ["dev-util/reasonix-bin"]
 source = "github"
 github = "esengine/DeepSeek-Reasonix"
