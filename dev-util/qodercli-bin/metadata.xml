@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>overlay@gentoozh.org</email>
+		<name>gentoo-zh</name>
+	</maintainer>
+	<longdescription lang="en">
+		Qoder CLI is Qoder&#39;s command-line coding agent. It provides an
+		interactive terminal interface for AI-assisted software
+		development, with MCP support. This package installs the
+		prebuilt upstream binary.
+	</longdescription>
+	<longdescription lang="zh">
+		Qoder CLI 是 Qoder 推出的命令行编程智能体, 在终端中提供交互式
+		界面, 辅助完成软件开发任务, 支持 MCP。本软件包安装上游预编译的
+		二进制文件。
+	</longdescription>
+</pkgmetadata>

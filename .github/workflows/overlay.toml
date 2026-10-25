@@ -1485,6 +1485,12 @@ autobump = true
 # live package only
 #["dev-util/pi-coding-agent-xz"]
 
+["dev-util/qodercli-bin"]
+source = "regex"
+url = "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/channels/manifest.json"
+regex = '"latest": "([\d.]+)"'
+github_account = "liangyongxiang"
+
 ["dev-util/reasonix-bin"]
 source = "github"
 github = "esengine/DeepSeek-Reasonix"
