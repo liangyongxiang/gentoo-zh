@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>overlay@gentoozh.org</email>
+		<name>gentoo-zh</name>
+	</maintainer>
+	<longdescription lang="en">
+		Qoder is Qoder&#39;s agentic coding desktop application. It pairs
+		an AI agent workbench with file and session management, built on
+		Electron. This package installs the prebuilt upstream binary
+		tree from the official deb payload.
+	</longdescription>
+	<longdescription lang="zh">
+		Qoder 是 Qoder 推出的智能体编程桌面应用, 以编程智能体为核心,
+		基于 Electron 构建。本软件包安装官方 deb 载荷中的上游预编译
+		程序目录。
+	</longdescription>
+</pkgmetadata>

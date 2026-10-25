@@ -1485,6 +1485,12 @@ autobump = true
 # live package only
 #["dev-util/pi-coding-agent-xz"]
 
+["dev-util/qoder-bin"]
+source = "regex"
+url = "https://download.qoder.com/qoder-app/releases/latest-linux.yml"
+regex = 'version: ([\d.]+)'
+github_account = "liangyongxiang"
+
 ["dev-util/qodercli-bin"]
 source = "regex"
 url = "https://qoder-ide.oss-accelerate.aliyuncs.com/qodercli/channels/manifest.json"
