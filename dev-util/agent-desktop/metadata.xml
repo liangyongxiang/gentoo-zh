@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>tanekliang@gmail.com</email>
+		<name>Yongxiang Liang</name>
+	</maintainer>
+	<use>
+		<flag name="wayland">Pull in wl-clipboard for Wayland clipboard support</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">vercel-labs/agent-desktop</remote-id>
+	</upstream>
+</pkgmetadata>
