@@ -1290,6 +1290,16 @@ github = "sheerun/filelock"
 use_latest_tag = true
 prefix = "v"
 
+["dev-util/agent-browser"]
+bundle = [
+  { id = "distfiles", repo = "gentoo-zh-drafts/agent-browser", workflow = "distfiles.yml", tag = "dist-v{PV}", inputs = { version = "{PV}" } },
+]
+source = "github"
+github = "vercel-labs/agent-browser"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
 ["dev-util/agent-desktop"]
 bundle = [
   { id = "distfiles", repo = "gentoo-zh-drafts/agent-desktop", workflow = "distfiles.yml", tag = "dist-v{PV}", inputs = { version = "{PV}" } },
